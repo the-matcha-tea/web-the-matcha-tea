@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Matcha.tea</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrap">
+      <div class="logo">The Matcha.tea</div>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="https://wa.me/6282283563484?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea.">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#menu" class="btn btn-outline order-btn">Order Now</a>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="eyebrow">SOLUSI MANIS UNTUK HARI YANG JENUH</div>
+      <h1>The Matcha.tea</h1>
+      <div class="hero-icon">
+      <img src="MatchaPegang.png" alt="Matcha Illustration">
+      </div>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-dark">PESAN SEKARANG</a>
+        <a href="#menu" class="btn btn-outline">LIHAT MENU</a>
+      </div>
+      <div class="hero-image"> 
+      <img src="hero-matcha.png" alt="Matcha Cuy">
+        </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header">
+        <h2>Our Menu</h2>
+      </div>
+      <div class="menu-grid">
+        <a class="menu-card" href="menu-detail.html?item=matcha-milk" target="_blank" rel="noopener">
+          <div class="menu-thumb"><img src="Kazuya-Mishima.webp" alt="Matcha Milk"></div>
+          <div class="menu-info">
+            <div>
+              <h3>Matcha Milk</h3>
+              <div class="size">250ml</div>
+            </div>
+            <div class="menu-price">IDR 15.000</div>
+          </div>
+        </a>
+        <a class="menu-card" href="menu-detail.html?item=milk-tea" target="_blank" rel="noopener">
+          <div class="menu-thumb"><img src="Nyengir Emoji.jpg" alt="Milk Tea"></div>
+          <div class="menu-info">
+            <div>
+              <h3>Milk Tea</h3>
+              <div class="size">250ml</div>
+            </div>
+            <div class="menu-price">IDR 15.000</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      Berawal dari kerjasama serta inovasi mahasiswa program studi Manajemen Informatika & Administrasi Bisnis Politeknik Negeri Medan 
+      kami hadir untuk mendefinisikan ulang cara Anda menikmati minuman kekinian. 
+      Lewat kolaborasi strategis, kami memadukan kreativitas muda dan keahlian industri untuk menciptakan racikan minuman yang istimewa.
+    </p>
+    <p>
+       The Matcha.Tea hadir untuk menghadirkan minuman berkualitas dengan cita rasa yang autentik. Kami ingin menemani setiap momen Anda dengan rasa yang nikmat dan dibuat dari bahan pilihan. 
+    </p>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="hero-foot">
+      <img src="MatchaFull.png" alt="Matcha Logo">
+      </div>
+        </div>
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <div class="menu-detail">
+              <li><a href="menu-detail.html?item=matcha-milk">Matcha Milk</a></li>
+              <li><a href="menu-detail.html?item=milk-tea">Milk Tea</a></li>
+              
+            </div>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="https://wa.me/6282283563484?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea." target="_blank" rel="noopener">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <div class="social-icon">
+      <a href="https://www.instagram.com/thematcha.tea" target="_blank"><img src="Instagram.png" alt="Instagram Icon">
+      </a>
+      </div>
+            <div class="social-icon">
+      <a href="https://www.tiktok.com/@thematchatea6" target="_blank"><img src="TikTok.png" alt="TikTok Icon">
+      </a>
+      </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 The Matcha.tea. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://wa.me/6282283563484?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea." class="wa-float" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.004 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.258.594 4.462 1.723 6.4L3.2 28.8l6.55-1.7a12.74 12.74 0 0 0 6.254 1.64h.005c7.07 0 12.8-5.73 12.8-12.8s-5.73-12.74-12.805-12.74zm0 23.36a10.5 10.5 0 0 1-5.36-1.47l-.385-.23-3.885 1.01 1.037-3.79-.25-.39a10.55 10.55 0 0 1-1.617-5.62c0-5.84 4.75-10.59 10.6-10.59 5.84 0 10.59 4.75 10.59 10.6 0 5.84-4.75 10.49-10.73 10.49zm5.81-7.92c-.318-.16-1.882-.93-2.174-1.036-.29-.106-.503-.16-.716.16-.212.318-.822 1.036-1.008 1.248-.186.212-.372.238-.69.08-.318-.16-1.343-.495-2.558-1.578-.945-.842-1.583-1.882-1.768-2.2-.186-.318-.02-.49.14-.65.144-.143.318-.372.477-.557.16-.186.212-.318.318-.53.106-.212.053-.397-.027-.557-.08-.16-.716-1.726-.982-2.365-.258-.62-.52-.536-.716-.546l-.61-.01c-.212 0-.557.08-.848.397-.29.318-1.11 1.084-1.11 2.644 0 1.56 1.136 3.068 1.294 3.28.16.212 2.235 3.415 5.417 4.79.757.327 1.348.522 1.808.668.76.242 1.452.208 2 .126.61-.09 1.882-.77 2.148-1.514.265-.744.265-1.38.186-1.514-.08-.133-.29-.212-.61-.372z"/>
+    </svg>
+  </a>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+      document.getElementById('hamburger').classList.toggle('active');
+    }
+
+    // Tutup menu otomatis saat salah satu link diklik (khusus mobile)
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
+        document.getElementById('hamburger').classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
