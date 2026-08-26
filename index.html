@@ -13,14 +13,19 @@
     <div class="container nav-wrap">
       <div class="logo">The Matcha.tea</div>
       <nav>
-        <ul>
+        <ul id="navMenu">
           <li><a href="#home">Home</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://wa.me/6282283563484?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea.">Contact</a></li>
         </ul>
       </nav>
-      <a href="#menu" class="btn btn-outline">Order Now</a>
+      <a href="#menu" class="btn btn-outline order-btn">Order Now</a>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
@@ -51,7 +56,7 @@
           <div class="menu-info">
             <div>
               <h3>Matcha Milk</h3>
-              <div class="size">Medium &middot; Large</div>
+              <div class="size">250ml</div>
             </div>
             <div class="menu-price">IDR 15.000</div>
           </div>
@@ -61,7 +66,7 @@
           <div class="menu-info">
             <div>
               <h3>Milk Tea</h3>
-              <div class="size">Medium &middot; Large</div>
+              <div class="size">250ml</div>
             </div>
             <div class="menu-price">IDR 15.000</div>
           </div>
@@ -78,9 +83,7 @@
       Lewat kolaborasi strategis, kami memadukan kreativitas muda dan keahlian industri untuk menciptakan racikan minuman yang istimewa.
     </p>
     <p>
-        The Matcha.Tea berkomitmen menyajikan kebahagiaan di setiap tegukan melalui dua menu andalan kami: Matcha Milk yang kaya rasa dan Milk Tea yang lembut nan autentik. 
-      Dibuat dengan bahan premium dan standar kualitas terbaik, kami memastikan setiap produk tidak hanya memanjakan lidah, tetapi juga memberikan pengalaman yang menyegarkan. 
-      Dari kampus untuk dunia rasa, kami mengundang Anda untuk menjadi bagian dari perjalanan rasa kami! 
+       The Matcha.Tea hadir untuk menghadirkan minuman berkualitas dengan cita rasa yang autentik. Kami ingin menemani setiap momen Anda dengan rasa yang nikmat dan dibuat dari bahan pilihan. 
     </p>
   </section>
 
@@ -129,6 +132,28 @@
       </div>
     </div>
   </footer>
+  
+  <a href="https://wa.me/6282283563484?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea." class="wa-float" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.004 3.2c-7.07 0-12.8 5.73-12.8 12.8 0 2.258.594 4.462 1.723 6.4L3.2 28.8l6.55-1.7a12.74 12.74 0 0 0 6.254 1.64h.005c7.07 0 12.8-5.73 12.8-12.8s-5.73-12.74-12.805-12.74zm0 23.36a10.5 10.5 0 0 1-5.36-1.47l-.385-.23-3.885 1.01 1.037-3.79-.25-.39a10.55 10.55 0 0 1-1.617-5.62c0-5.84 4.75-10.59 10.6-10.59 5.84 0 10.59 4.75 10.59 10.6 0 5.84-4.75 10.49-10.73 10.49zm5.81-7.92c-.318-.16-1.882-.93-2.174-1.036-.29-.106-.503-.16-.716.16-.212.318-.822 1.036-1.008 1.248-.186.212-.372.238-.69.08-.318-.16-1.343-.495-2.558-1.578-.945-.842-1.583-1.882-1.768-2.2-.186-.318-.02-.49.14-.65.144-.143.318-.372.477-.557.16-.186.212-.318.318-.53.106-.212.053-.397-.027-.557-.08-.16-.716-1.726-.982-2.365-.258-.62-.52-.536-.716-.546l-.61-.01c-.212 0-.557.08-.848.397-.29.318-1.11 1.084-1.11 2.644 0 1.56 1.136 3.068 1.294 3.28.16.212 2.235 3.415 5.417 4.79.757.327 1.348.522 1.808.668.76.242 1.452.208 2 .126.61-.09 1.882-.77 2.148-1.514.265-.744.265-1.38.186-1.514-.08-.133-.29-.212-.61-.372z"/>
+    </svg>
+  </a>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+      document.getElementById('hamburger').classList.toggle('active');
+    }
+
+    // Tutup menu otomatis saat salah satu link diklik (khusus mobile)
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
+        document.getElementById('hamburger').classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
