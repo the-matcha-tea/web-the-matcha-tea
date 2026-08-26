@@ -163,6 +163,8 @@
     background:var(--cream-dark);
     border-radius:20px;
     overflow:hidden;
+    display:block;
+    cursor:pointer;
     transition:transform .3s ease, box-shadow .3s ease;
   }
   .menu-card:hover{
@@ -301,6 +303,125 @@
     text-align:center;
     font-size:13px;
     color:#7a7168;
+  }
+
+  /* ---------- MENU DETAIL PAGE ---------- */
+  .detail{
+    padding:60px 0 100px;
+  }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    letter-spacing:0.3px;
+    color:var(--brown);
+    margin-bottom:36px;
+  }
+  .back-link:hover{color:var(--ink);}
+
+  .detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+    background:var(--cream-dark);
+    border-radius:28px;
+    padding:40px;
+  }
+
+  .detail-image{
+    aspect-ratio:1/1;
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .detail-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .detail-category{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--brown);
+    margin-bottom:10px;
+  }
+
+  .detail-title{
+    font-size:38px;
+    margin-bottom:16px;
+  }
+
+  .detail-size{
+    font-size:13px;
+    color:#7a7168;
+    margin-bottom:20px;
+  }
+
+  .detail-divider{
+    border:none;
+    border-top:1px solid rgba(43,36,32,0.12);
+    margin:20px 0;
+  }
+
+  .detail-desc{
+    font-size:15px;
+    color:#584f47;
+    margin-bottom:24px;
+  }
+
+  .detail-price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:32px;
+  }
+
+  .detail-price-label{
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#7a7168;
+  }
+
+  .detail-price{
+    font-family:'Playfair Display', serif;
+    font-size:26px;
+    font-weight:600;
+  }
+
+  .btn-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding:16px 28px;
+    border-radius:30px;
+    background:#25D366;
+    color:#fff;
+    border:1.5px solid #25D366;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.3px;
+    cursor:pointer;
+    transition:all .25s ease;
+  }
+  .btn-whatsapp:hover{
+    background:#1ebe57;
+    border-color:#1ebe57;
+  }
+
+  @media (max-width: 720px){
+    .detail-grid{
+      grid-template-columns:1fr;
+      padding:24px;
+      border-radius:20px;
+    }
+    .detail-title{font-size:28px;}
   }
 
   /* ---------- RESPONSIVE ---------- */
