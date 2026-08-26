@@ -1,9 +1,10 @@
 :root{
-    --cream:#f7f1e6;
-    --cream-dark:#efe6d4;
-    --ink:#2b2420;
+    --blue:#0077B6;
+    --dark-blue :#023E8A;
+    --ink:#FFFFFF;
     --brown:#6b4a2f;
-    --gold:#b98b4e;
+    --gold:#E9C46A;
+    --text-light:#F7F1E6;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -14,7 +15,7 @@
 
   body{
     font-family:'Poppins', sans-serif;
-    background:var(--cream);
+    background:var(--blue);
     color:var(--ink);
     line-height:1.6;
   }
@@ -36,8 +37,9 @@
 
   /* ---------- HEADER ---------- */
   header{
+    background:var(--dark-blue);
     padding:26px 0;
-    border-bottom:1px solid rgba(43,36,32,0.08);
+    border-bottom:1px solid rgba(247,241,230,0.12);
   }
 
   .nav-wrap{
@@ -79,7 +81,7 @@
 
   .btn-dark{
     background:var(--ink);
-    color:var(--cream);
+    color:var(--blue);
   }
   .btn-dark:hover{
     background:transparent;
@@ -92,7 +94,38 @@
   }
   .btn-outline:hover{
     background:var(--ink);
-    color:var(--cream);
+    color:var(--blue);
+  }
+
+  /* ---------- HAMBURGER (mobile menu icon) ---------- */
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:28px;
+    height:22px;
+    cursor:pointer;
+    z-index:20;
+  }
+
+  .hamburger span{
+    display:block;
+    width:100%;
+    height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+
+  .hamburger.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2){
+    opacity:0;
+  }
+  .hamburger.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
   }
 
   /* ---------- HAMBURGER (mobile menu icon) ---------- */
@@ -136,7 +169,7 @@
     font-size:12px;
     letter-spacing:4px;
     text-transform:uppercase;
-    color:var(--brown);
+    color:var(--ink);
     margin-bottom:14px;
   }
 
@@ -195,7 +228,7 @@
   }
 
   .menu-card{
-    background:var(--cream-dark);
+    background:var(--dark-blue);
     border-radius:20px;
     overflow:hidden;
     display:block;
@@ -208,14 +241,15 @@
   }
 
   .menu-thumb{
+    width: 300px;
+    max-width: 100%;
     aspect-ratio:16/10;
-    background:
-      radial-gradient(circle at 20% 30%, #e63946 0%, transparent 40%),
-      radial-gradient(circle at 70% 20%, #f4a825 0%, transparent 45%),
-      radial-gradient(circle at 50% 70%, #2a9d8f 0%, transparent 45%),
-      radial-gradient(circle at 85% 80%, #1d3557 0%, transparent 40%),
-      linear-gradient(135deg,#ffb703,#e63946);
     position:relative;
+  }
+  .menu-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
   }
   .menu-thumb::after{
     content:"";
@@ -234,17 +268,19 @@
   .menu-info h3{
     font-size:16px;
     margin-bottom:4px;
+    color:var(--text-light);
   }
 
   .menu-info .size{
     font-size:12px;
-    color:#7a7168;
+    color:rgba(247,241,230,0.65);
   }
 
   .menu-price{
     font-family:'Playfair Display', serif;
     font-size:18px;
     font-weight:600;
+    color:var(--gold);
   }
 
   /* ---------- ABOUT ---------- */
@@ -261,7 +297,7 @@
   }
 
   .about p{
-    color:#584f47;
+    color:var(--ink);
     font-size:15px;
   }
   
@@ -271,7 +307,7 @@
 
   /* ---------- FOOTER ---------- */
   footer{
-    background:var(--cream-dark);
+    background:var(--dark-blue);
     padding:60px 0 26px;
   }
 
@@ -288,14 +324,15 @@
     letter-spacing:1px;
     text-transform:uppercase;
     margin-bottom:16px;
-    color:var(--brown);
+    color:var(--gold);
   }
 
   .footer-col ul li{
     margin-bottom:10px;
     font-size:14px;
+    color:var(--text-light);
   }
-  .footer-col ul li a:hover{color:var(--brown);}
+  .footer-col ul li a:hover{color:#90E0EF;}
 
   .socials{
     display:flex;
@@ -325,6 +362,16 @@
     transition:background .2s ease;
   }
 
+  .social-icon svg{
+    width: 100px;
+    height:100px;
+    fill:var(--text-light);
+    transition:fill .2s ease;
+  }
+  .social-icon a:hover svg{
+    fill:var(--gold);
+  }
+
   .hero-foot{
     height: 168px;
     width: 268px;
@@ -333,11 +380,179 @@
   }
 
   .footer-bottom{
-    border-top:1px solid rgba(43,36,32,0.12);
+    border-top:1px solid rgba(247,241,230,0.15);
     padding-top:22px;
     text-align:center;
     font-size:13px;
-    color:#7a7168;
+    color:rgba(247,241,230,0.55);
+  }
+
+  /* ---------- MENU DETAIL PAGE ---------- */
+  .detail{
+    padding:60px 0 100px;
+  }
+
+  .back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    letter-spacing:0.3px;
+    color:var(--ink);
+    margin-bottom:36px;
+  }
+  .back-link:hover{color:var(--brown);}
+
+  .detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:center;
+    background:var(--dark-blue);
+    border-radius:28px;
+    padding:40px;
+  }
+
+  .detail-image{
+    aspect-ratio:1/1;
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .detail-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .detail-category{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+
+  .detail-title{
+    font-size:38px;
+    margin-bottom:16px;
+    color:var(--text-light);
+  }
+
+  .detail-size{
+    font-size:13px;
+    color:rgba(247,241,230,0.65);
+    margin-bottom:20px;
+  }
+
+  .detail-divider{
+    border:none;
+    border-top:1px solid rgba(247,241,230,0.15);
+    margin:20px 0;
+  }
+
+  .detail-desc{
+    font-size:15px;
+    color:rgba(247,241,230,0.8);
+    margin-bottom:24px;
+  }
+
+  .detail-price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:32px;
+  }
+
+  .detail-price-label{
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:rgba(247,241,230,0.65);
+  }
+
+  .detail-price{
+    font-family:'Playfair Display', serif;
+    font-size:26px;
+    font-weight:600;
+    color:var(--gold);
+  }
+
+  .btn-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding:16px 28px;
+    border-radius:30px;
+    background:#25D366;
+    color:#fff;
+    border:1.5px solid #25D366;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.3px;
+    cursor:pointer;
+    transition:all .25s ease;
+  }
+  .btn-whatsapp:hover{
+    background:#1ebe57;
+    border-color:#1ebe57;
+  }
+
+  @media (max-width: 720px){
+    .detail-grid{
+      grid-template-columns:1fr;
+      padding:24px;
+      border-radius:20px;
+    }
+    .detail-title{font-size:28px;}
+  }
+
+  /* ---------- WHATSAPP FLOATING BUBBLE ---------- */
+  .wa-float{
+    position:fixed;
+    bottom:26px;
+    right:26px;
+    width:58px;
+    height:58px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(37,211,102,0.6);
+    z-index:100;
+    transition:transform .2s ease, box-shadow .2s ease;
+    animation:wa-pulse 2.4s ease-in-out infinite;
+  }
+
+  .wa-float:hover{
+    transform:scale(1.08);
+    box-shadow:0 12px 28px -6px rgba(37,211,102,0.75);
+  }
+
+  .wa-float svg{
+    width:30px;
+    height:30px;
+    fill:#fff;
+  }
+
+  @keyframes wa-pulse{
+    0%, 100%{box-shadow:0 10px 24px -6px rgba(37,211,102,0.6);}
+    50%{box-shadow:0 10px 24px -6px rgba(37,211,102,0.95), 0 0 0 8px rgba(37,211,102,0.15);}
+  }
+
+  @media (max-width: 480px){
+    .wa-float{
+      width:52px;
+      height:52px;
+      bottom:18px;
+      right:18px;
+    }
+    .wa-float svg{
+      width:26px;
+      height:26px;
+    }
   }
 
   /* ---------- MENU DETAIL PAGE ---------- */
@@ -520,7 +735,7 @@
       flex-direction:column;
       align-items:center;
       gap:0;
-      background:var(--cream);
+      background:var(--dark-blue);
       max-height:0;
       overflow:hidden;
       opacity:0;
@@ -530,7 +745,7 @@
     nav ul.active{
       max-height:300px;
       opacity:1;
-      border-bottom:1px solid rgba(43,36,32,0.08);
+      border-bottom:1px solid rgba(247,241,230,0.12);
     }
 
     nav ul li{
