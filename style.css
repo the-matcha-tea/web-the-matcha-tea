@@ -38,8 +38,12 @@
   /* ---------- HEADER ---------- */
   header{
     background:var(--dark-blue);
-    padding:26px 0;
+    padding:20px 0;
     border-bottom:1px solid rgba(247,241,230,0.12);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
   .nav-wrap{
@@ -204,6 +208,61 @@
     overflow:hidden;
     aspect-ratio:16/9;
   }
+
+  /* ---------- STYLING TOMBOL PREV & NEXT ---------- */
+.slideshow-container {
+  max-width: 600px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  animation: fade 1s ease-in-out;
+}
+
+/* Tombol Prev & Next */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 16px;
+  color: var(--ink);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 0 4px 4px 0;
+  user-select: none;
+  background-color: rgba(2, 62, 138, 0.4); /* Menggunakan warna dark-blue dengan transparansi */
+  text-decoration: none;
+}
+
+/* Posisikan tombol Next di kanan */
+.next {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Posisikan tombol Prev di kiri */
+.prev {
+  left: 0;
+}
+
+/* Efek hover tombol */
+.prev:hover, .next:hover {
+  background-color: rgba(2, 62, 138, 0.8);
+  color: var(--gold);
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
 
   /* ---------- MENU ---------- */
   .menu{
@@ -398,10 +457,10 @@
     gap:8px;
     font-size:13px;
     letter-spacing:0.3px;
-    color:var(--ink);
+    color:var(--black);
     margin-bottom:36px;
   }
-  .back-link:hover{color:var(--brown);}
+  .back-link:hover{color:var(--black);}
 
   .detail-grid{
     display:grid;
@@ -475,172 +534,6 @@
     font-size:26px;
     font-weight:600;
     color:var(--gold);
-  }
-
-  .btn-whatsapp{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    width:100%;
-    padding:16px 28px;
-    border-radius:30px;
-    background:#25D366;
-    color:#fff;
-    border:1.5px solid #25D366;
-    font-size:14px;
-    font-weight:500;
-    letter-spacing:0.3px;
-    cursor:pointer;
-    transition:all .25s ease;
-  }
-  .btn-whatsapp:hover{
-    background:#1ebe57;
-    border-color:#1ebe57;
-  }
-
-  @media (max-width: 720px){
-    .detail-grid{
-      grid-template-columns:1fr;
-      padding:24px;
-      border-radius:20px;
-    }
-    .detail-title{font-size:28px;}
-  }
-
-  /* ---------- WHATSAPP FLOATING BUBBLE ---------- */
-  .wa-float{
-    position:fixed;
-    bottom:26px;
-    right:26px;
-    width:58px;
-    height:58px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 10px 24px -6px rgba(37,211,102,0.6);
-    z-index:100;
-    transition:transform .2s ease, box-shadow .2s ease;
-    animation:wa-pulse 2.4s ease-in-out infinite;
-  }
-
-  .wa-float:hover{
-    transform:scale(1.08);
-    box-shadow:0 12px 28px -6px rgba(37,211,102,0.75);
-  }
-
-  .wa-float svg{
-    width:30px;
-    height:30px;
-    fill:#fff;
-  }
-
-  @keyframes wa-pulse{
-    0%, 100%{box-shadow:0 10px 24px -6px rgba(37,211,102,0.6);}
-    50%{box-shadow:0 10px 24px -6px rgba(37,211,102,0.95), 0 0 0 8px rgba(37,211,102,0.15);}
-  }
-
-  @media (max-width: 480px){
-    .wa-float{
-      width:52px;
-      height:52px;
-      bottom:18px;
-      right:18px;
-    }
-    .wa-float svg{
-      width:26px;
-      height:26px;
-    }
-  }
-
-  /* ---------- MENU DETAIL PAGE ---------- */
-  .detail{
-    padding:60px 0 100px;
-  }
-
-  .back-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:13px;
-    letter-spacing:0.3px;
-    color:var(--brown);
-    margin-bottom:36px;
-  }
-  .back-link:hover{color:var(--ink);}
-
-  .detail-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:56px;
-    align-items:center;
-    background:var(--cream-dark);
-    border-radius:28px;
-    padding:40px;
-  }
-
-  .detail-image{
-    aspect-ratio:1/1;
-    border-radius:20px;
-    overflow:hidden;
-  }
-  .detail-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-
-  .detail-category{
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:var(--brown);
-    margin-bottom:10px;
-  }
-
-  .detail-title{
-    font-size:38px;
-    margin-bottom:16px;
-  }
-
-  .detail-size{
-    font-size:13px;
-    color:#7a7168;
-    margin-bottom:20px;
-  }
-
-  .detail-divider{
-    border:none;
-    border-top:1px solid rgba(43,36,32,0.12);
-    margin:20px 0;
-  }
-
-  .detail-desc{
-    font-size:15px;
-    color:#584f47;
-    margin-bottom:24px;
-  }
-
-  .detail-price-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:32px;
-  }
-
-  .detail-price-label{
-    font-size:12px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    color:#7a7168;
-  }
-
-  .detail-price{
-    font-family:'Playfair Display', serif;
-    font-size:26px;
-    font-weight:600;
   }
 
   .btn-whatsapp{
