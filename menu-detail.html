@@ -1,52 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu Detail - The Matcha.tea</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Detail - The Matcha.tea</title>
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-blue text-white">
 
-  <header>
-    <div class="container nav-wrap">
-      <div class="logo">The Matcha.tea</div>
+  <header class="sticky top-0 z-50 bg-dark-blue px-8 py-5 shadow-lg">
+    <div class="mx-auto flex max-w-6xl items-center justify-between">
+      <div class="font-display text-xl font-semibold tracking-wide">The Matcha.tea</div>
       <nav>
-        <ul>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="index.html#menu">Menu</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="https://wa.me/6283168101499?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea.">Contact</a></li>
+        <ul id="navMenu" class="flex gap-[38px] text-[14px] tracking-[0.3px] max-tab:gap-0">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="https://wa.me/6283168101499?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea." class="nav-link">Contact</a></li>
         </ul>
       </nav>
-      <a href="index.html#menu" class="btn btn-outline">Order Now</a>
+      <a href="index.html#menu" class="btn btn-outline max-tab:hidden">Order Now</a>
+
+      <div id="hamburger" class="hamburger z-20 hidden max-tab:flex max-tab:h-[22px] max-tab:w-7 max-tab:cursor-pointer max-tab:flex-col max-tab:justify-center max-tab:gap-[5px]">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
-  <section class="detail">
-    <div class="container">
-      <a href="index.html#menu" class="back-link">&larr; Kembali ke Menu</a>
+  <!-- DETAIL -->
+  <section class="px-8 pt-15 pb-[100px]">
+    <div class="mx-auto max-w-6xl">
+      <a href="index.html#menu" class="mb-9 inline-flex items-center gap-2 text-[13px] tracking-[0.3px]" data-aos="fade-right">
+        &larr; Kembali ke Menu
+      </a>
 
-      <div class="detail-grid">
-        <div class="detail-image">
-          <img id="itemImage" src="" alt="">
+      <div class="detail-card grid items-center gap-14 rounded-[28px] bg-dark-blue p-10 max-detail:grid-cols-1 max-detail:gap-8 max-detail:rounded-[20px] max-detail:p-6 detail:grid-cols-2">
+        <div class="aspect-square overflow-hidden rounded-[20px]">
+          <img id="itemImage" src="" alt="" class="h-full w-full object-cover">
         </div>
-        <div class="detail-info">
-          <div class="detail-category" id="itemCategory">Drink</div>
-          <h1 class="detail-title" id="itemTitle">Nama Menu</h1>
-          <div class="detail-size" id="itemSize">Medium &middot; Large</div>
 
-          <hr class="detail-divider">
+        <div>
+          <div id="itemCategory" class="mb-2.5 text-xs uppercase tracking-[2px] text-gold">Drink</div>
+          <h1 id="itemTitle" class="mb-4 font-display text-[28px] font-semibold text-cream detail:text-[38px]">Nama Menu</h1>
+          <div id="itemSize" class="mb-5 text-[13px] text-cream/65">Medium &middot; Large</div>
 
-          <p class="detail-desc" id="itemDesc">Deskripsi menu.</p>
+          <hr class="my-5 border-t border-cream/15">
 
-          <div class="detail-price-row">
-            <span class="detail-price-label">Harga</span>
-            <span class="detail-price" id="itemPrice">IDR 15.000</span>
+          <p id="itemDesc" class="mb-6 text-[15px] text-cream/80">Deskripsi menu.</p>
+
+          <div class="mb-8 flex items-center justify-between">
+            <span class="text-xs uppercase tracking-[1.5px] text-cream/65">Harga</span>
+            <span id="itemPrice" class="font-display text-[26px] font-semibold text-gold">IDR 15.000</span>
           </div>
 
-          <a id="orderBtn" class="btn-whatsapp" href="#" target="_blank" rel="noopener">
+          <a id="orderBtn" href="#"
+             class="flex w-full items-center justify-center gap-2.5 rounded-[30px] border-[1.5px] border-wa bg-wa px-7 py-4 text-[14px] font-medium tracking-[0.3px] text-white transition-all duration-200 hover:border-wa-dark hover:bg-wa-dark">
             Pesan via WhatsApp
           </a>
         </div>
@@ -54,92 +66,59 @@
     </div>
   </section>
 
-  <footer id="contact">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-col">
-          <div class="hero-foot">
-      <img src="image/MatchaFull.svg" alt="Matcha Logo">
-      </div>
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-dark-blue px-8 pt-15 pb-[26px]">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-[50px] flex flex-wrap justify-between gap-10 max-tab:flex-col">
+        <div data-aos="fade-up">
+          <div class="h-[168px] w-[268px] rounded-full">
+            <img src="image/MatchaFull.svg" alt="Matcha Logo">
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Menu</h4>
-          <ul>
-            <li><a href="menu-detail.html?item=matcha-milk">Matcha Milk</a></li>
-            <li><a href="menu-detail.html?item=milk-tea">Milk Tea</a></li>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+          <h4 class="mb-4 text-[13px] uppercase tracking-[1px] text-gold">Menu</h4>
+          <ul class="text-sm text-cream">
+            <li class="mb-2.5"><a href="menu-detail.html?item=matcha-milk" class="footer-link">Matcha Milk</a></li>
+            <li class="mb-2.5"><a href="menu-detail.html?item=milk-tea" class="footer-link">Milk Tea</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="https://wa.me/6283168101499?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea." target="_blank" rel="noopener">Contact</a></li>
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <h4 class="mb-4 text-[13px] uppercase tracking-[1px] text-gold">Company</h4>
+          <ul class="text-sm text-cream">
+            <li class="mb-2.5"><a href="index.html#about" class="footer-link">About Us</a></li>
+            <li class="mb-2.5"><a href="index.html#home" class="footer-link">Home</a></li>
+            <li class="mb-2.5"><a href="https://wa.me/6283168101499?text=Halo%2C%20saya%20mau%20bertanya%20tentang%20The%20Matcha.tea." target="_blank" rel="noopener" class="footer-link">Contact</a></li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Follow Us</h4>
-          <div class="socials">
-            <div class="social-icon">
-      <a href="https://www.instagram.com/thematcha.tea" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.248.637.415 1.363.465 2.428.05 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122c-.05 1.065-.217 1.79-.465 2.428a4.9 4.9 0 0 1-1.153 1.772 4.9 4.9 0 0 1-1.772 1.153c-.637.248-1.363.415-2.428.465-1.066.05-1.405.06-4.122.06s-3.056-.01-4.122-.06c-1.065-.05-1.79-.217-2.428-.465a4.9 4.9 0 0 1-1.772-1.153 4.9 4.9 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.01 15.056 2 14.717 2 12s.01-3.056.06-4.122c.05-1.065.217-1.79.465-2.428A4.9 4.9 0 0 1 3.678 3.678 4.9 4.9 0 0 1 5.45 2.525c.637-.248 1.363-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.058-.976.045-1.505.207-1.858.344-.467.182-.8.4-1.15.75-.35.35-.568.683-.75 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.372-.058 4.04s.01 2.986.058 4.04c.045.976.207 1.505.344 1.858.182.466.4.8.75 1.15.35.35.683.567 1.15.75.353.136.882.3 1.857.343 1.054.048 1.37.058 4.041.058s2.987-.01 4.041-.058c.976-.044 1.505-.207 1.858-.344.466-.182.8-.4 1.15-.75.35-.35.567-.683.75-1.15.136-.352.3-.881.343-1.857.048-1.054.058-1.37.058-4.04 0-2.668-.01-2.985-.058-4.04-.044-.975-.207-1.504-.344-1.857a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.352-.137-.881-.3-1.857-.344-1.054-.048-1.37-.058-4.04-.058zM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666zm5.338-1.995a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
-      </a>
-      </div>
-            <div class="social-icon">
-      <a href="https://www.tiktok.com/@thematchatea6" target="_blank" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 2h-3.1v13.6c0 1.53-1.24 2.78-2.78 2.78a2.78 2.78 0 0 1-2.78-2.78 2.78 2.78 0 0 1 2.78-2.78c.24 0 .47.03.7.09v-3.15a5.9 5.9 0 0 0-.7-.04A5.9 5.9 0 0 0 4.83 15.6a5.9 5.9 0 0 0 5.9 5.9 5.9 5.9 0 0 0 5.9-5.9V8.36a7.86 7.86 0 0 0 4.4 1.34V6.6a4.85 4.85 0 0 1-4.43-4.6z"/></svg>
-      </a>
-      </div>
+
+        <div data-aos="fade-up" data-aos-delay="300">
+          <h4 class="mb-4 text-[13px] uppercase tracking-[1px] text-gold">Follow Us</h4>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/thematcha.tea" target="_blank" rel="noopener" aria-label="Instagram"
+               class="group flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-200 hover:bg-brown">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-cream transition-colors duration-200 group-hover:fill-gold"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.256 1.216.6 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.248.637.415 1.363.465 2.428.05 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122c-.05 1.065-.217 1.79-.465 2.428a4.9 4.9 0 0 1-1.153 1.772 4.9 4.9 0 0 1-1.772 1.153c-.637.248-1.363.415-2.428.465-1.066.05-1.405.06-4.122.06s-3.056-.01-4.122-.06c-1.065-.05-1.79-.217-2.428-.465a4.9 4.9 0 0 1-1.772-1.153 4.9 4.9 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.01 15.056 2 14.717 2 12s.01-3.056.06-4.122c.05-1.065.217-1.79.465-2.428A4.9 4.9 0 0 1 3.678 3.678 4.9 4.9 0 0 1 5.45 2.525c.637-.248 1.363-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.986.01-4.04.058-.976.045-1.505.207-1.858.344-.467.182-.8.4-1.15.75-.35.35-.568.683-.75 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.372-.058 4.04s.01 2.986.058 4.04c.045.976.207 1.505.344 1.858.182.466.4.8.75 1.15.35.35.683.567 1.15.75.353.136.882.3 1.857.343 1.054.048 1.37.058 4.041.058s2.987-.01 4.041-.058c.976-.044 1.505-.207 1.858-.344.466-.182.8-.4 1.15-.75.35-.35.567-.683.75-1.15.136-.352.3-.881.343-1.857.048-1.054.058-1.37.058-4.04 0-2.668-.01-2.985-.058-4.04-.044-.975-.207-1.504-.344-1.857a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.352-.137-.881-.3-1.857-.344-1.054-.048-1.37-.058-4.04-.058zM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666zm5.338-1.995a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@thematchatea6" target="_blank" rel="noopener" aria-label="TikTok"
+               class="group flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-200 hover:bg-brown">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-cream transition-colors duration-200 group-hover:fill-gold"><path d="M16.6 2h-3.1v13.6c0 1.53-1.24 2.78-2.78 2.78a2.78 2.78 0 0 1-2.78-2.78 2.78 2.78 0 0 1 2.78-2.78c.24 0 .47.03.7.09v-3.15a5.9 5.9 0 0 0-.7-.04A5.9 5.9 0 0 0 4.83 15.6a5.9 5.9 0 0 0 5.9 5.9 5.9 5.9 0 0 0 5.9-5.9V8.36a7.86 7.86 0 0 0 4.4 1.34V6.6a4.85 4.85 0 0 1-4.43-4.6z"/></svg>
+            </a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
+
+      <div class="border-t border-cream/15 pt-[22px] text-center text-[13px] text-cream/55" data-aos="fade-up">
         &copy; 2026 The Matcha.tea. All rights reserved.
       </div>
     </div>
   </footer>
 
-  <script>
-    // ====== GANTI NOMOR WHATSAPP DI SINI (format: kode negara + nomor, tanpa + / 0 di depan) ======
-    const WA_NUMBER = "6283168101499";
-
-    // Data tiap menu. Tambahkan item baru di sini kalau menunya nambah.
-    const MENU_DATA = {
-      "matcha-milk": {
-        title: "Matcha Milk",
-        category: "Drink",
-        size: "250ml",
-        price: "IDR 15.000",
-        image: "image/Matcha_Bottle.jpeg",
-        desc: "Perpaduan matcha premium dan susu segar yang creamy. Rasa earthy yang lembut di setiap tegukan. Cocok dinikmati dingin untuk nemenin hari yang hectic. Perpaduan matcha premium dan susu segar yang creamy, menghadirkan rasa earthy yang lembut di setiap tegukan. Cocok dinikmati dingin untuk menemani hari yang jenuh."
-      },
-      "milk-tea": {
-        title: "Milk Tea",
-        category: "Drink",
-        size: "250ml",
-        price: "IDR 15.000",
-        image: "image/Milktea_Bottle.jpeg",
-        desc: "Perpaduan teh pilihan dan susu creamy yang pas di lidah. Manisnya nggak ngebosanin, bikin nagih di setiap tegukan. Teman nugas paling setia.Teh susu klasik dengan rasa yang autentik dan lembut, diracik dengan bahan premium untuk memberikan pengalaman minum yang menyegarkan."
-      }
-    };
-
-    const params = new URLSearchParams(window.location.search);
-    const itemKey = params.get("item");
-    const item = MENU_DATA[itemKey] || MENU_DATA["matcha-milk"];
-
-    document.title = item.title + " - The Matcha.tea";
-    document.getElementById("itemImage").src = item.image;
-    document.getElementById("itemImage").alt = item.title;
-    document.getElementById("itemCategory").textContent = item.category;
-    document.getElementById("itemTitle").textContent = item.title;
-    document.getElementById("itemSize").innerHTML = item.size;
-    document.getElementById("itemDesc").textContent = item.desc;
-    document.getElementById("itemPrice").textContent = item.price;
-
-    const message = `Halo, saya mau pesan ${item.title} (${item.price}).`;
-    document.getElementById("orderBtn").href =
-      `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-  </script>
-
+<script src="js/main.js"></script>
+  <script src="js/menu-detail.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js"></script>
 </body>
 </html>

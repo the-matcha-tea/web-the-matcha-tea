@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue: #0077b6;
+  --color-dark-blue: #023e8a;
+  --color-brown: #6b4a2f;
+  --color-gold: #e9c46a;
+  --color-cream: #f7f1e6;
+  --color-wa: #25d366;
+  --color-wa-dark: #1ebe57;
+
+  --font-sans: "Poppins", sans-serif;
+  --font-display: "Playfair Display", serif;
+
+  --breakpoint-tab: 860px;
+  --breakpoint-detail: 720px;
+  --breakpoint-micro: 480px;
+
+  --animate-wa-pulse: wa-pulse 2.4s ease-in-out infinite;
+  --animate-fade: fade 1s ease-in-out;
+
+  @keyframes wa-pulse {
+    0%, 100% { box-shadow: 0 10px 24px -6px rgb(37 211 102 / 0.6); }
+    50% { box-shadow: 0 10px 24px -6px rgb(37 211 102 / 0.95), 0 0 0 8px rgb(37 211 102 / 0.15); }
+  }
+
+  @keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-blue);
+    color: #fff;
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Bingkai heading agar anchor tidak tertutup header sticky */
+  section[id] {
+    scroll-margin-top: 84px;
+  }
+
+  /* Hormati preferensi pengguna yang mengurangi gerakan */
+  @media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1.5px solid #fff;
+  }
+
+  .btn-dark {
+    background-color: #fff;
+    color: var(--color-blue);
+  }
+  .btn-dark:hover {
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #fff;
+  }
+  .btn-outline:hover {
+    background-color: #fff;
+    color: var(--color-blue);
+  }
+
+  /* Hamburger => animasi X saat aktif */
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Slide default disembunyikan; di-show oleh JS */
+  .slide {
+    display: none;
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover {
+    color: var(--color-brown);
+  }
+
+  .footer-link:hover {
+    color: #90e0ef;
+  }
+
+  /* Dropdown navigasi mobile (max-width: 860px) */
+  @media (max-width: 860px) {
+    nav ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      background-color: var(--color-dark-blue);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.25s ease;
+    }
+
+    nav ul.active {
+      max-height: 300px;
+      opacity: 1;
+      border-bottom: 1px solid rgb(247 241 230 / 0.12);
+    }
+
+    nav ul li {
+      width: 100%;
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 0;
+    }
+  }
+}
